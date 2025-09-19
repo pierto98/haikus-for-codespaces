@@ -1,3 +1,4 @@
+/*
 body {
     background-color: #2a2b2f; 
     display: flex; 
@@ -10,13 +11,27 @@ body {
 }
 
 .mona-images {
-    max-width: 400px;
-    max-height: 400px;
-    border: 8px solid #fff;
+    background-color: #2a2b2f; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    color: #fff;
+    text-align:center;
 }
 
-.haiku-containers {
-    padding: 10px 0px 20px 0px;
+.light-mode {
+    background-color: #f7f7f7 !important;
+    color: #222 !important;
+}
+
+.light-mode .mona-images {
+    border-color: #222 !important;
+}
+
+.light-mode .haikus {
+    color: #222 !important;
 }
 
 .haikus {
@@ -32,5 +47,80 @@ body {
 
     .haikus {
         font-size: 22px;
+    color: inherit;
     }
+}
+*/
+
+body {
+    /* ...estilos existentes... */
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Moderno para imágenes */
+.mona-images {
+    max-width: 340px;
+    max-height: 340px;
+    border-radius: 18px;
+    border: 6px solid #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    object-fit: cover;
+    margin: 24px auto 12px auto;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    display: block;
+}
+
+/* Moderno para contenedor de haiku */
+.haiku-containers {
+    padding: 18px 0px 28px 0px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 12px;
+    margin: 0 16px 24px 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Moderno para texto de haiku */
+.haikus {
+    font-size: 22px;
+    white-space: pre-wrap;
+    color: inherit;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Moderno para botón */
+#toggleLight {
+    background: linear-gradient(90deg, #4f8cff 0%, #38e6b0 100%);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 28px;
+    font-size: 18px;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+#toggleLight:hover {
+    background: linear-gradient(90deg, #38e6b0 0%, #4f8cff 100%);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+/* Transiciones para modo claro */
+.light-mode {
+    background-color: #f7f7f7 !important;
+    color: #222 !important;
+    transition: background 0.3s, color 0.3s;
+}
+.light-mode .mona-images {
+    border-color: #222 !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.light-mode .haikus {
+    color: #222 !important;
 }
